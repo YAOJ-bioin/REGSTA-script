@@ -1,0 +1,15 @@
+##cell segmentation
+#cellpose installation
+#download environment.yml from https://github.com/MouseLand/cellpose
+#cmd
+conda env create -f environment.yml
+conda activate cellpose
+pip install cellpose
+
+
+#prediction:
+python -m cellpose  --exclude_on_edges  --dir .\data4test\img --diameter 0  --save_outlines  --save_txt  --in_folders --verbose --flow_threshold 5 --pretrained_model .\model\cellpose_residual_on_style_on_concatenation_off_CP_1_2022_11_26_02_48_20.469512
+
+#--dir  (only slice images saving path)
+#--save_txt   ("outlices.txt" whice serves as cell segmentation result in next step ,will be saved in a folder which is named "txt_outlines")
+#--pretrained_model  (path of auto-segmentation model)
